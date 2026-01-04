@@ -6,6 +6,10 @@ from .crud import get_hackathons, upsert_hackathons
 from .scheduler import start_scheduler
 from scrapers.aggregator import fetch_all_hackathons
 import httpx
+from fastapi import FastAPI, Depends
+
+from fastapi.middleware.cors import CORSMiddleware
+
 
 Base.metadata.create_all(bind=engine)
 
