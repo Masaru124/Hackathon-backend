@@ -4,12 +4,53 @@ import time
 BASE_URL = "https://unstop.com/hackathons"
 
 FILTER_URLS = [
+    # Status filters
     "https://unstop.com/hackathons?status=upcoming",
     "https://unstop.com/hackathons?status=ongoing",
+    # Mode filters
     "https://unstop.com/hackathons?mode=online",
-    "https://unstop.com/hackathons?mode=offline",
+    "https://unstop.com/hackathons?mode=offline"  
+      "https://unstop.com/hackathons?mode=hybrid",
+    # Eligibility filters
     "https://unstop.com/hackathons?eligibility=everyone",
     "https://unstop.com/hackathons?eligibility=college",
+    "https://unstop.com/hackathons?eligibility=high-school",
+    "https://unstop.com/hackathons?eligibility=professionals",
+    # Category search filters
+    "https://unstop.com/hackathons?search=ai",
+    "https://unstop.com/hackathons?search=blockchain",
+    "https://unstop.com/hackathons?search=machine+learning",
+    "https://unstop.com/hackathons?search=web3",
+    "https://unstop.com/hackathons?search=fintech",
+    "https://unstop.com/hackathons?search=cybersecurity",
+    "https://unstop.com/hackathons?search=robotics",
+    "https://unstop.com/hackathons?search=gaming",
+    "https://unstop.com/hackathons?search=data+science",
+    "https://unstop.com/hackathons?search=cloud",
+    "https://unstop.com/hackathons?search=iot",
+    "https://unstop.com/hackathons?search=vr",
+    "https://unstop.com/hackathons?search=ar",
+    "https://unstop.com/hackathons?search=healthcare",
+    "https://unstop.com/hackathons?search=social+impact",
+    "https://unstop.com/hackathons?search=sustainability",
+    "https://unstop.com/hackathons?search=education",
+    "https://unstop.com/hackathons?search=crypto",
+    "https://unstop.com/hackathons?search=defi",
+    "https://unstop.com/hackathons?search=nft",
+    "https://unstop.com/hackathons?search=metaverse",
+    "https://unstop.com/hackathons?search=quantum",
+    "https://unstop.com/hackathons?search=automation",
+    "https://unstop.com/hackathons?search=devops",
+    "https://unstop.com/hackathons?search=backend",
+    "https://unstop.com/hackathons?search=frontend",
+    "https://unstop.com/hackathons?search=fullstack",
+    "https://unstop.com/hackathons?search=mobile",
+    "https://unstop.com/hackathons?search=design",
+    "https://unstop.com/hackathons?search=product",
+    "https://unstop.com/hackathons?search=management",
+    "https://unstop.com/hackathons?search=finance",
+    "https://unstop.com/hackathons?search=marketing",
+    "https://unstop.com/hackathons?search=social",
 ]
 
 def fetch_unstop_hackathons():
