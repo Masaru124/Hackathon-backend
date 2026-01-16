@@ -214,4 +214,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <!-- Contributors auto-generated -->
 
-[![Contributors](https://contrib.rocks/image?repo=yourusername/hackathon-backend)](https://github.com/Masaru124/hackathon-backend/graphs/contributors)
+[![Contributors](https://contrib.rocks/image?repo=Masaru124/hackathon-backend)](https://github.com/Masaru124/hackathon-backend/graphs/contributors)
