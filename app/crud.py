@@ -118,3 +118,29 @@ def upsert_hackathons(db: Session, hackathons: list):
         "skipped": skipped,
         "total": len(hackathons),
     }
+
+
+def delete_expired_hackathons(db: Session) -> int:
+    """
+    Delete hackathons where end_date < current date.
+    Returns the count of deleted hackathons.
+    """
+    from datetime import date
+    now = date.today()
+    
+    # Only delete if end_date is set and is before today
+    expired = db.query(Hackathon).filter(
+        Hackathon.end_date.isnot(None),
+        Hackathon.end_date < now
+    )
+    
+    count = expired.count()
+    if count > 0:
+        expired.delete(synchronize_session=False)
+        db.commit()
+        print(f"🧹 Deleted {count} expired hackathons")
+    else:
+        print("🧹 No expired hackathons to delete")
+    
+    return count
+

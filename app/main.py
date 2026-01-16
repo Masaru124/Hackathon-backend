@@ -3,7 +3,7 @@ from fastapi import FastAPI
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import OperationalError
 from .database import Base, engine, SessionLocal
-from .crud import upsert_hackathons
+from .crud import upsert_hackathons, delete_expired_hackathons
 from .models import Hackathon
 
 from .scheduler import start_scheduler
@@ -103,4 +103,38 @@ def scrape_now():
             db.close()
             print(f"❌ Unexpected error: {e}")
             return {"status": "error", "message": str(e)}
+
+@app.post("/cleanup-expired")
+def cleanup_expired(db: Session = Depends(get_db)):
+    """
+    Manually trigger cleanup of expired hackathons.
+    Deletes hackathons where end_date < today's date.
+    """
+    count = delete_expired_hackathons(db)
+    return {
+        "status": "success",
+        "deleted": count,
+        "message": f"Deleted {count} expired hackathons"
+    }
+
+@app.get("/cleanup-status")
+def cleanup_status(db: Session = Depends(get_db)):
+    """
+    Get count of expired hackathons (without deleting them).
+    """
+    from datetime import date
+    now = date.today()
+    
+    expired_count = db.query(Hackathon).filter(
+        Hackathon.end_date.isnot(None),
+        Hackathon.end_date < now
+    ).count()
+    
+    total_count = db.query(Hackathon).count()
+    
+    return {
+        "total_hackathons": total_count,
+        "expired_hackathons": expired_count,
+        "active_hackathons": total_count - expired_count
+    }
 

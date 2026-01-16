@@ -3,10 +3,30 @@ from bs4 import BeautifulSoup
 import time
 
 BASE_URLS = [
+    # Main page
     "https://devpost.com/hackathons",
+    
+    # Status filters - open for registration
+    "https://devpost.com/hackathons?status=upcoming",
+    
+    # Search category filters
     "https://devpost.com/hackathons?search=ai",
     "https://devpost.com/hackathons?search=blockchain",
     "https://devpost.com/hackathons?search=machine+learning",
+    "https://devpost.com/hackathons?search=web3",
+    "https://devpost.com/hackathons?search=fintech",
+    "https://devpost.com/hackathons?search=cybersecurity",
+    "https://devpost.com/hackathons?search=robotics",
+    "https://devpost.com/hackathons?search=gaming",
+    "https://devpost.com/hackathons?search=data+science",
+    "https://devpost.com/hackathons?search=cloud",
+    "https://devpost.com/hackathons?search=iot",
+    "https://devpost.com/hackathons?search=vr",
+    "https://devpost.com/hackathons?search=ar",
+    "https://devpost.com/hackathons?search=healthcare",
+    "https://devpost.com/hackathons?search=social+impact",
+    "https://devpost.com/hackathons?search=sustainability",
+    "https://devpost.com/hackathons?search=education",
 ]
 
 def fetch_hackathons():
