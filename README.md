@@ -212,6 +212,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📊 Contributors
 
-<!-- Contributors auto-generated -->
 
-[![Contributors](https://contrib.rocks/image?repo=Masaru124/hackathon-backend)](https://github.com/Masaru124/hackathon-backend/graphs/contributors)
+## 📊 Contributors
+
+[![Contributors](https://contrib.rocks/image?repo=Masaru124/hackathon-backend&max=100&cache-bust=1)](
+https://github.com/Masaru124/hackathon-backend/graphs/contributors
+)
